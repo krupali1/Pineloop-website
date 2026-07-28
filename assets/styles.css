@@ -296,6 +296,7 @@ a.card:hover .go{color:var(--cleared)}
 
 .closing h2{max-width:none;margin-bottom:1rem}
 .closing p{max-width:46ch;margin-bottom:1.9rem}
+.closing--home .btn{display:block;width:fit-content;margin:0 auto}
 
 .site-foot{border-top:1px solid var(--ink);padding:36px 0 44px}
 .foot-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}
