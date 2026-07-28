@@ -91,9 +91,15 @@
   }
 
   /* ---- discovery call form ------------------------------------------------
-     Validates, then posts url-encoded data to the form's own action. That
-     contract is what Netlify Forms, Formspree, Basin and a plain endpoint all
-     accept, so switching provider is a change to the action attribute only. */
+     Validates, then posts the fields as JSON to the form's own action, which
+     is /api/lead — the serverless function in /api/lead.js that emails the
+     request on. Any 2xx is treated as sent.
+
+     To point this at a provider that expects url-encoded data instead
+     (Netlify Forms, Formspree, Basin), swap the two marked lines below for:
+       'Content-Type': 'application/x-www-form-urlencoded'
+       body: new URLSearchParams(new FormData(form)).toString()
+     and change the action attribute in contact/index.html. */
   var form = document.getElementById('contactForm');
   if (!form) return;
 
@@ -134,15 +140,16 @@
     if (failEl) failEl.hidden = true;
     busy(true);
 
-    var body = new URLSearchParams(new FormData(form)).toString();
+    var payload = {};
+    new FormData(form).forEach(function (value, key) { payload[key] = value; });
 
-    fetch(form.getAttribute('action') || window.location.pathname, {
+    fetch(form.getAttribute('action') || '/api/lead', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
+        'Content-Type': 'application/json',   /* url-encoded: see note above */
         'Accept': 'application/json'
       },
-      body: body
+      body: JSON.stringify(payload)          /* url-encoded: see note above */
     })
       .then(function (res) {
         if (!res.ok) throw new Error('HTTP ' + res.status);

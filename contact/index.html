@@ -76,17 +76,18 @@
 
   <section class="wrap band">
     <!--
-      CONTACT FORM — wired to Netlify Forms out of the box.
-      Netlify: nothing to do. The form is detected at deploy time from this static
-        markup; submissions appear under Forms in the site dashboard. Set up a
-        notification email there so requests reach a person.
-      Formspree / Basin / other: change action="/" to the provider endpoint and delete
-        the data-netlify, netlify-honeypot, and form-name attributes/inputs. The submit
-        handler in /assets/site.js posts url-encoded data and expects a 2xx, which is
-        what every mainstream form service returns.
-      Own backend: point action at it. Same contract.
-      MAILTO FALLBACK — ankitagrawal.316@gmail.com appears in the failure state below. Change it
-        to the real inbox.
+      CONTACT FORM — posts JSON to /api/lead/, this site's own serverless
+      function (see /api/lead.js), which emails the request on via Resend.
+      Vercel: zero config. Anything in /api is deployed as a function
+        automatically. Set RESEND_API_KEY in Project Settings → Environment
+        Variables, or nothing is delivered.
+      Netlify Forms instead: set action="/", add data-netlify="true"
+        netlify-honeypot="bot-field", restore a hidden form-name input, and
+        delete /api. Then add a notification email under Forms → discovery-call.
+      Formspree / Basin / Web3Forms: point action at the provider endpoint and
+        add its origin to connect-src and form-action in the CSP.
+      MAILTO FALLBACK — the address in the failure state below should match
+        LEAD_TO in /api/lead.js (currently ankitagrawal.316@gmail.com).
     -->
     <div class="form-doc" id="formDoc">
       <div class="form-doc__bar">
@@ -95,7 +96,6 @@
       </div>
       <div class="form-doc__body">
         <form id="contactForm" name="discovery-call" method="POST" action="/api/lead/" novalidate>
-          <input type="hidden" name="form-name" value="discovery-call">
           <p class="hp" aria-hidden="true"><label>Do not fill this in <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
           <div class="field-row">
             <div class="field" id="f-name">
