@@ -48,6 +48,7 @@ p{margin:0 0 1.05em}
 p:last-child{margin-bottom:0}
 .measure{max-width:64ch}
 .lead{font-size:clamp(1.08rem,1.45vw,1.3rem);line-height:1.5;max-width:52ch}
+.w-full{max-width:none !important}
 
 .mono{font-family:var(--font-mono);font-size:.75rem;letter-spacing:.14em;text-transform:uppercase;color:var(--steel);font-weight:400}
 .num{color:var(--ink);margin-right:16px}
@@ -59,19 +60,13 @@ a:hover{border-bottom-color:var(--cleared)}
 .wrap{max-width:var(--max);margin:0 auto;padding-left:var(--gutter);padding-right:var(--gutter);width:100%}
 .band{padding-top:var(--band);padding-bottom:var(--band);border-top:1px solid var(--rule)}
 .band--open{border-top:0}
-.sec-head{
-  display:grid;
-  grid-template-columns:1fr auto;
-  align-items:start;
-  column-gap:clamp(20px,4vw,48px);
-  margin-bottom:clamp(26px,3.5vw,40px);
-}
-.sec-head .mono{grid-column:2;grid-row:1;text-align:right;white-space:nowrap;padding-top:.4em}
-.sec-head h2{grid-column:1;grid-row:1;max-width:20ch}
-@media (max-width:700px){
-  .sec-head{display:block}
-  .sec-head .mono{display:block;text-align:left;white-space:normal;margin-bottom:20px;padding-top:0}
-}
+.sec-head{margin-bottom:clamp(26px,3.5vw,40px)}
+.sec-head .mono{display:block;margin-bottom:20px}
+.sec-head h2{max-width:none}
+.sec-head h2 a{color:inherit;text-decoration:none;border-bottom:0;display:inline-flex;align-items:center;gap:14px}
+.sec-head h2 a:hover{color:var(--cleared)}
+.sec-head h2 a .go{font-family:var(--font-mono);font-size:.55em;color:var(--steel);transition:transform .15s ease}
+.sec-head h2 a:hover .go{color:var(--cleared);transform:translateX(4px)}
 
 /* ---------- the pull statement ---------- */
 .statement{
@@ -176,10 +171,16 @@ a:hover{border-bottom-color:var(--cleared)}
 
 /* ---------- problem columns ---------- */
 .cols2{display:grid;grid-template-columns:1fr 1fr;gap:clamp(22px,3.5vw,48px);margin-top:2.4rem}
-.col-item{border-top:1px solid var(--ink);padding-top:16px}
+.problem-grid{align-items:start}
+.problem-grid .sec-head h2{line-height:1.4}
+.problem-grid .sec-head h2 .accent-pine{color:var(--cleared);font-style:italic}
+.col-item{background:var(--paper);padding:28px 32px;box-shadow:0 0 24px rgba(16,22,26,.16),0 0 4px rgba(16,22,26,.08)}
 .col-item h3{margin-bottom:.5rem;font-size:1.1rem}
 .col-item p{font-size:1rem;margin:0}
-@media (max-width:700px){.cols2{grid-template-columns:1fr;gap:26px}}
+@media (max-width:700px){
+  .cols2{grid-template-columns:1fr;gap:26px}
+  .problem-grid .sec-head h2{line-height:1.15}
+}
 
 /* ---------- layers ---------- */
 .layers{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--ink)}
@@ -293,8 +294,9 @@ a.card:hover .go{color:var(--cleared)}
 .confirm h3{color:var(--cleared);margin-bottom:.6rem}
 .confirm p{max-width:52ch;margin:0}
 
-.closing h2{max-width:13ch;margin-bottom:1rem}
+.closing h2{max-width:none;margin-bottom:1rem}
 .closing p{max-width:46ch;margin-bottom:1.9rem}
+.closing--home .btn{display:block;width:fit-content;margin:0 auto}
 
 .site-foot{border-top:1px solid var(--ink);padding:36px 0 44px}
 .foot-inner{display:flex;flex-wrap:wrap;justify-content:space-between;gap:24px}

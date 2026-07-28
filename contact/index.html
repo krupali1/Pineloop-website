@@ -92,7 +92,6 @@
     <div class="form-doc" id="formDoc">
       <div class="form-doc__bar">
         <span class="mono">Discovery call request</span>
-        <span class="mono">4 fields</span>
       </div>
       <div class="form-doc__body">
         <form id="contactForm" name="discovery-call" method="POST" action="/api/lead/" novalidate>
@@ -115,12 +114,12 @@
             <p class="err" id="e-email">Enter a work email we can reply to.</p>
           </div>
           <div class="field" id="f-message">
-            <label for="in-message">The process that costs you the most hours</label>
+            <label for="in-message">The Problem Statement</label>
             <textarea id="in-message" name="message" rows="4" required></textarea>
             <p class="err" id="e-message">Tell us roughly which process you have in mind.</p>
           </div>
           <div class="form-foot">
-            <button class="btn btn--ghost" type="submit" id="formSubmit">Request a call</button>
+            <button class="btn" type="submit" id="formSubmit">Request a call</button>
             <span class="mono">Bring your controller and your IT head</span>
           </div>
         </form>
