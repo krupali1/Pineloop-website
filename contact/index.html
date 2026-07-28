@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Book a discovery call | Pineloop</title>
+<meta name="description" content="We sit with your team, walk one process end to end as it runs today, and agree which one is worth taking on first.">
+<link rel="canonical" href="https://pineloop.com/contact/">
+<meta name="robots" content="index, follow, max-image-preview:large">
+<meta name="theme-color" content="#EFF0EC">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Pineloop">
+<meta property="og:url" content="https://pineloop.com/contact/">
+<meta property="og:title" content="Book a discovery call | Pineloop">
+<meta property="og:description" content="We sit with your team, walk one process end to end as it runs today, and agree which one is worth taking on first.">
+<meta property="og:image" content="https://pineloop.com/assets/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Pineloop — finance operations for the physical economy">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Book a discovery call | Pineloop">
+<meta name="twitter:description" content="We sit with your team, walk one process end to end as it runs today, and agree which one is worth taking on first.">
+<meta name="twitter:image" content="https://pineloop.com/assets/og-image.png">
+
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="alternate icon" href="/favicon.ico" sizes="32x32">
+<link rel="apple-touch-icon" href="/assets/icon-180.png">
+<link rel="manifest" href="/site.webmanifest">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500&display=swap">
+<link rel="stylesheet" href="/assets/styles.css">
+
+<script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://pineloop.com/"},
+    {"@type": "ListItem", "position": 2, "name": "Contact", "item": "https://pineloop.com/contact/"}
+  ]
+}
+</script>
+</head>
+<body>
+
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="site-head" id="siteHead">
+  <div class="wrap head-inner">
+    <a class="wordmark" href="/">Pineloop</a>
+    <nav class="nav" id="primaryNav" aria-label="Primary">
+      <a href="/platform/">Platform</a>
+      <a href="/processes/">What it runs</a>
+      <a href="/deploy/">How we deploy</a>
+    </nav>
+    <div class="head-actions">
+      <!-- BOOK A DISCOVERY CALL — replace href="/contact/" with the live scheduling URL when one exists. If off-site, add target="_blank" rel="noopener". -->
+      <a class="btn" href="/contact/">Book a <span class="only-wide">discovery </span>call</a>
+      <button class="nav-toggle" id="navToggle" aria-expanded="false" aria-controls="primaryNav">Menu</button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<section class="wrap page-head band--open">
+    <span class="mono">Contact</span>
+    <h1>Book a discovery call.</h1>
+    <p class="lead">We sit with your team, walk one process end to end as it runs today, and agree which one is worth taking on first.</p>
+  </section>
+
+  <section class="wrap band">
+    <!--
+      CONTACT FORM — wired to Netlify Forms out of the box.
+      Netlify: nothing to do. The form is detected at deploy time from this static
+        markup; submissions appear under Forms in the site dashboard. Set up a
+        notification email there so requests reach a person.
+      Formspree / Basin / other: change action="/" to the provider endpoint and delete
+        the data-netlify, netlify-honeypot, and form-name attributes/inputs. The submit
+        handler in /assets/site.js posts url-encoded data and expects a 2xx, which is
+        what every mainstream form service returns.
+      Own backend: point action at it. Same contract.
+      MAILTO FALLBACK — hello@pineloop.com appears in the failure state below. Change it
+        to the real inbox.
+    -->
+    <div class="form-doc" id="formDoc">
+      <div class="form-doc__bar">
+        <span class="mono">Discovery call request</span>
+        <span class="mono">4 fields</span>
+      </div>
+      <div class="form-doc__body">
+        <form id="contactForm" name="discovery-call" method="POST" action="/"
+                data-netlify="true" netlify-honeypot="bot-field" novalidate>
+          <input type="hidden" name="form-name" value="discovery-call">
+          <p class="hp" aria-hidden="true"><label>Do not fill this in <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
+          <div class="field-row">
+            <div class="field" id="f-name">
+              <label for="in-name">Name</label>
+              <input id="in-name" name="name" type="text" autocomplete="name" required>
+              <p class="err" id="e-name">Enter your name.</p>
+            </div>
+            <div class="field" id="f-company">
+              <label for="in-company">Company</label>
+              <input id="in-company" name="company" type="text" autocomplete="organization" required>
+              <p class="err" id="e-company">Enter your company name.</p>
+            </div>
+          </div>
+          <div class="field" id="f-email">
+            <label for="in-email">Work email</label>
+            <input id="in-email" name="email" type="email" inputmode="email" autocomplete="email" required>
+            <p class="err" id="e-email">Enter a work email we can reply to.</p>
+          </div>
+          <div class="field" id="f-message">
+            <label for="in-message">The process that costs you the most hours</label>
+            <textarea id="in-message" name="message" rows="4" required></textarea>
+            <p class="err" id="e-message">Tell us roughly which process you have in mind.</p>
+          </div>
+          <div class="form-foot">
+            <button class="btn btn--ghost" type="submit" id="formSubmit">Request a call</button>
+            <span class="mono">Bring your controller and your IT head</span>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="confirm" id="formConfirm" hidden tabindex="-1" role="status" aria-live="polite">
+      <h3>Received.</h3>
+      <p>Your request is with us. Someone from the team replies within one working day, usually with two or three times to choose from. Nothing else happens to your details.</p>
+    </div>
+
+    <div class="confirm confirm--fail" id="formFail" hidden tabindex="-1" role="alert">
+      <h3>That did not send.</h3>
+      <p>The request did not reach us, so nothing has been recorded. Try once more, or email <a href="mailto:hello@pineloop.com">hello@pineloop.com</a> with the process you have in mind and we will pick it up from there.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-foot">
+  <div class="wrap foot-inner">
+    <div>
+      <a class="wordmark" href="/">Pineloop</a>
+      <p class="mono" style="margin-top:12px">Finance operations for the physical economy</p>
+    </div>
+    <nav class="foot-nav" aria-label="Footer">
+      <a href="/platform/">Platform</a>
+      <a href="/processes/">What it runs</a>
+      <a href="/deploy/">How we deploy</a>
+      <a href="/contact/">Contact</a>
+    </nav>
+  </div>
+</footer>
+
+<script src="/assets/site.js" defer></script>
+</body>
+</html>

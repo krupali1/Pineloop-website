@@ -1,0 +1,47 @@
+# Netlify configuration for the Pineloop site.
+# Static files only. No build step, no dependencies.
+
+[build]
+  publish = "."
+  command = ""
+
+# Pretty URLs: /platform serves /platform/index.html without a redirect hop.
+[build.processing]
+  skip_processing = false
+
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "DENY"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "geolocation=(), microphone=(), camera=(), interest-cohort=()"
+    Strict-Transport-Security = "max-age=31536000; includeSubDomains; preload"
+    # The form posts with fetch(), so a third-party form provider needs its origin
+    # added to connect-src (and form-action, for the no-JS fallback), e.g.
+    #   connect-src 'self' https://formspree.io; form-action 'self' https://formspree.io;
+    Content-Security-Policy = "default-src 'self'; base-uri 'self'; form-action 'self'; frame-ancestors 'none'; object-src 'none'; img-src 'self' data:; script-src 'self' 'sha256-xMEne5xSNlgeOligOATNEvyFpyN5H3HG/E/qDyG8S5Y='; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; connect-src 'self'; upgrade-insecure-requests"
+
+# Fingerprint-free assets, so keep the cache short enough to ship a fix same day.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=3600, must-revalidate"
+
+[[headers]]
+  for = "/assets/*.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"
+
+# Canonical host: send the apex or the www variant to whichever one you keep.
+# Uncomment the pair that matches the domain you configure in Netlify.
+# [[redirects]]
+#   from = "https://www.pineloop.com/*"
+#   to = "https://pineloop.com/:splat"
+#   status = 301
+#   force = true
