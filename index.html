@@ -30,8 +30,8 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;500&display=swap">
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@600;700&family=Public+Sans:wght@400;500&family=Fraunces:ital,wght@1,500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@600;700&family=Public+Sans:wght@400;500&family=Fraunces:ital,wght@1,500&display=swap">
 <link rel="stylesheet" href="/assets/styles.css">
 
 <script>document.documentElement.className=document.documentElement.className.replace('no-js','js');</script>
@@ -61,7 +61,7 @@
 
 <header class="site-head" id="siteHead">
   <div class="wrap head-inner">
-    <a class="wordmark" href="/">Pineloop</a>
+    <a class="wordmark" href="/">Pinel<span class="wm-oo">oo</span>p</a>
     <nav class="nav" id="primaryNav" aria-label="Primary">
       <a href="/platform/">Platform</a>
       <a href="/processes/">What it runs</a>
@@ -78,94 +78,15 @@
 <main id="main" tabindex="-1">
 
 <!-- Hero -->
-<section class="wrap hero band--open" aria-labelledby="hero-h">
+<section class="wrap hero hero--centered band--open" aria-labelledby="hero-h">
     <div class="hero__grid">
-      <div>
-        <h1 id="hero-h">Autonomous finance operations, built for your business.</h1>
-        <p class="lead">Pineloop runs reconciliation, AR, AP, and close for companies that make, move, and trade physical goods. Continuously, inside the systems you already have, on the treatments your team already uses.</p>
-        <div class="cta-row">
-          <!-- BOOK A DISCOVERY CALL — swap in the real scheduling link here. -->
-          <a class="btn" href="/contact/">Book a discovery call</a>
-          <a class="quiet" href="/processes/">See what it runs</a>
-        </div>
+      <h1 id="hero-h"><span class="line">Autonomous <em class="accent-italic">finance</em> operations,</span><span class="line">built for your business.</span></h1>
+      <p class="lead">Pineloop runs reconciliation, AR, AP, and close for companies that make, move, and trade physical goods. Continuously, inside the systems you already have, on the treatments your team already uses.</p>
+      <div class="cta-row">
+        <!-- BOOK A DISCOVERY CALL — swap in the real scheduling link here. -->
+        <a class="btn" href="/contact/">Book a discovery call</a>
+        <a class="quiet" href="/processes/">See what it runs</a>
       </div>
-
-      <figure class="dia hero-dia">
-        <svg viewBox="0 0 440 512" role="img" aria-labelledby="sysT sysD">
-          <title id="sysT">How work moves through Pineloop</title>
-          <desc id="sysD">Pineloop reads the ERP, warehouse and transport management, banking, marketplaces, and email, and holds one model of your position alongside your rules and the context it has built. Items that satisfy a rule post straight to the general ledger. Exceptions route to the person who knows and then to your approval before posting, and every resolution is kept as context.</desc>
-
-          <!-- source systems -->
-          <rect class="s-box" x="1" y="1" width="438" height="94"/>
-          <path class="s" d="M1 30h438"/>
-          <text class="t-ink t-lg" x="18" y="21">SOURCE SYSTEMS</text>
-          <text x="18" y="54">ERP &#183; WAREHOUSE / TRANSPORT</text>
-          <text x="18" y="78">BANKING &#183; MARKETPLACES &#183; EMAIL</text>
-
-          <path class="cf" d="M214 119h12l-6 9z"/>
-          <text class="t-sm" x="236" y="115">READS</text>
-
-          <!-- the engine, with its own context band -->
-          <rect class="s-box" x="1" y="128" width="438" height="120"/>
-          <path class="s" d="M1 158h438M1 214h438"/>
-          <text class="t-ink t-lg" x="18" y="149">PINELOOP</text>
-          <text class="t-sm" x="422" y="149" text-anchor="end">RUNS CONTINUOUSLY</text>
-          <text x="18" y="181">ONE MODEL OF YOUR POSITION</text>
-          <text x="18" y="202">YOUR RULES AND TREATMENTS</text>
-          <text class="t-ink t-md" x="18" y="236">CONTEXT</text>
-          <text class="t-sm" x="104" y="236">EVERY RESOLUTION IS KEPT</text>
-
-          <!-- the split -->
-          <text class="t-sm" x="88" y="272">POSTS</text>
-          <text class="t-sm" x="216" y="272">EXCEPTION</text>
-          <path class="cf" d="M64 367h12l-6 9z"/>
-          <path class="f" d="M340 248v26"/><path class="ff" d="M334 274h12l-6 9z"/>
-
-          <!-- resolved by a person, then approved -->
-          <rect class="s-box" x="200" y="284" width="239" height="64"/>
-          <path class="f" d="M200 284v64"/>
-          <text class="t-ink t-md" x="216" y="309">THE PERSON WHO KNOWS</text>
-          <text class="t-sm" x="216" y="332">THEN YOUR APPROVAL</text>
-
-          <!-- what it learns feeds back into context -->
-          <path class="s s-dash" d="M200 316H150V258"/><path class="sf" d="M144 257h12l-6-9z"/>
-
-          <path class="c" d="M340 348v19"/><path class="cf" d="M334 367h12l-6 9z"/>
-          <text class="t-sm" x="216" y="368">THEN POSTS</text>
-
-          <!-- general ledger -->
-          <rect class="s-box" x="1" y="376" width="438" height="134"/>
-          <path class="s" d="M1 404h438M1 426h438M1 454h438M1 482h438M60 404v106M146 404v106M258 404v106M348 404v106"/>
-          <text class="t-ink t-lg" x="18" y="396">GENERAL LEDGER</text>
-
-          <text class="t-th" x="8" y="419">DATE</text>
-          <text class="t-th" x="66" y="419">SOURCE DOC</text>
-          <text class="t-th" x="152" y="419">RULE APPLIED</text>
-          <text class="t-th" x="340" y="419" text-anchor="end">DR</text>
-          <text class="t-th" x="431" y="419" text-anchor="end">CR</text>
-
-          <text class="t-tb" x="8" y="446">04 JUL</text>
-          <text class="t-tb" x="66" y="446">GRN-4471</text>
-          <text class="t-tb" x="152" y="446">3-WAY MATCH</text>
-          <text class="t-tb" x="340" y="446" text-anchor="end">12,480.00</text>
-
-          <text class="t-tb" x="8" y="474">04 JUL</text>
-          <text class="t-tb" x="66" y="474">REM-0918</text>
-          <text class="t-tb" x="152" y="474">CASH APPLIED</text>
-          <text class="t-tb" x="340" y="474" text-anchor="end">86,310.00</text>
-
-          <text class="t-tb" x="8" y="502">05 JUL</text>
-          <text class="t-tb" x="66" y="502">INV-88213</text>
-          <text class="t-tb" x="152" y="502">SHORT-PAY</text>
-          <text class="t-tb" x="431" y="502" text-anchor="end">1,240.00</text>
-          <path class="c" d="M1 482v28"/>
-
-          <!-- the routes, with a pulse travelling each one on a loop -->
-          <path class="c" d="M220 95v24M70 248v119"/>
-          <path class="c pulse pulse-c" d="M220 95v24M70 248v119"/>
-          <path class="f pulse pulse-f" d="M340 248v26M340 348v19"/>
-        </svg>
-      </figure>
     </div>
   </section>
 
@@ -173,7 +94,7 @@
   <section class="wrap band reveal" aria-labelledby="problem-h">
     <div class="sec-head">
       <span class="mono"><span class="num">01</span>What actually happened</span>
-      <h2 id="problem-h">Multiple systems, scattered data, manual workload.</h2>
+      <h2 id="problem-h">Multiple systems,<br>scattered data,<br>manual workload.</h2>
     </div>
     <p class="measure">Several people spend the first two weeks of every month pulling reports out of systems that do not talk to each other, reconciling them in spreadsheets, and keying the result into the ledger. You bought the ERP. The system of record you paid seven figures for records the work. It was never going to do the work.</p>
     <p class="measure">The cost is not only the headcount. It is a close you cannot pull forward, balances you cannot explain until the period is over, and a control environment that depends on who is still in the seat.</p>
@@ -373,7 +294,7 @@
 <footer class="site-foot">
   <div class="wrap foot-inner">
     <div>
-      <a class="wordmark" href="/">Pineloop</a>
+      <a class="wordmark" href="/">Pinel<span class="wm-oo">oo</span>p</a>
       <p class="mono" style="margin-top:12px">Finance operations for the physical economy</p>
     </div>
     <nav class="foot-nav" aria-label="Footer">

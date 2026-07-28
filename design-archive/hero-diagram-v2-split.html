@@ -1,0 +1,150 @@
+<!-- ==================================================================
+     ARCHIVED — Pineloop hero, "split" version (v2)
+     Removed from the live homepage on 2026-07-28 when the hero reverted
+     to the centered, text-only layout. This is the SECOND hero diagram
+     iteration: a redesigned, more structured version of the original
+     hero-diagram.html (v1) archived alongside it in this folder, using a
+     larger 900x700 viewBox, aligned box widths, a proper SVG arrowhead
+     marker, and a two-column "text left, diagram right" layout instead
+     of v1's single stacked figure.
+
+     To restore this version:
+     1. Replace the <section class="wrap hero hero--centered ...">...
+        </section> block in index.html with the HTML below.
+     2. Replace the .hero--centered rules in assets/styles.css (search
+        "---------- hero ----------") with the CSS below.
+     3. Confirm the Google Fonts import in index.html still includes
+        IBM Plex Sans (it does, used elsewhere too) — no change needed.
+
+     Depends on the generic .dia / .s-box / .s / .c / .cf / .f / .ff /
+     .sf / .s-dash / .t-ink / .t-lg / .t-md / .t-sm / .t-th / .t-tb
+     classes in styles.css, which remain in place regardless of which
+     hero version is live, since the "cross-department resolution"
+     diagram further down the homepage uses the same classes.
+     ================================================================== -->
+
+<!-- ========== HTML (goes in index.html, inside <main>) ========== -->
+
+<!-- Hero -->
+<section class="wrap hero hero--split band--open" aria-labelledby="hero-h">
+    <div class="hero__grid">
+      <div>
+        <h1 id="hero-h">Autonomous finance operations, built for your business.</h1>
+        <p class="lead">Pineloop runs reconciliation, AR, AP, and close for companies that make, move, and trade physical goods. Continuously, inside the systems you already have, on the treatments your team already uses.</p>
+        <div class="cta-row">
+          <!-- BOOK A DISCOVERY CALL — swap in the real scheduling link here. -->
+          <a class="btn" href="/contact/">Book a discovery call</a>
+          <a class="quiet" href="/processes/">See what it runs</a>
+        </div>
+      </div>
+
+      <figure class="dia hero-dia">
+  <svg viewBox="0 0 900 700" role="img" aria-labelledby="sysT sysD">
+    <title id="sysT">How work moves through Pineloop</title>
+    <desc id="sysD">Pineloop reads the ERP, warehouse and transport management, banking, marketplaces, and email, and holds one model of your position alongside your rules and the context it has built. Items that satisfy a rule post straight to the general ledger. Exceptions route to the person who knows and then to your approval before posting, and every resolution is kept as context.</desc>
+
+    <defs>
+      <marker id="dia-arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+        <path d="M2 1L8 5L2 9" fill="none" stroke="context-stroke" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </marker>
+    </defs>
+
+    <!-- 1. source systems -->
+    <rect class="s-box" x="1" y="1" width="898" height="96"/>
+    <path class="s" d="M1 37h898"/>
+    <text class="t-ink t-lg" x="20" y="26">SOURCE SYSTEMS</text>
+    <text class="t-key" x="20" y="68">ERP &#183; WAREHOUSE / TRANSPORT &#183; BANKING &#183; MARKETPLACES &#183; EMAIL</text>
+
+    <!-- reads -->
+    <path class="c" d="M450 97v44" marker-end="url(#dia-arrow)"/>
+    <text class="t-sm" x="466" y="123">READS</text>
+
+    <!-- 2. the engine, with its own context band -->
+    <rect class="s-box" x="1" y="141" width="898" height="178"/>
+    <path class="s" d="M1 178h898M1 249h898"/>
+    <text class="t-ink t-lg" x="20" y="167">PINELOOP</text>
+    <text class="t-sm" x="880" y="167" text-anchor="end">RUNS CONTINUOUSLY</text>
+    <text x="20" y="205">ONE MODEL OF YOUR POSITION</text>
+    <text x="20" y="227">YOUR RULES AND TREATMENTS</text>
+    <text class="t-ink t-md" x="20" y="276">CONTEXT</text>
+    <text class="t-sm" x="112" y="276">EVERY RESOLUTION IS KEPT</text>
+
+    <!-- 3. the split -->
+    <path class="c" d="M230 319v188" marker-end="url(#dia-arrow)"/>
+    <text class="t-sm" x="246" y="345">POSTS</text>
+
+    <path class="f" d="M670 319v44" marker-end="url(#dia-arrow)"/>
+    <text class="t-sm" x="686" y="345">EXCEPTION</text>
+
+    <!-- 4. resolved by a person, then approved -->
+    <rect class="s-box" x="430" y="363" width="449" height="100"/>
+    <path class="f" d="M430 363v100"/>
+    <text class="t-ink t-md" x="450" y="397">THE PERSON WHO KNOWS</text>
+    <text class="t-sm" x="450" y="421">THEN YOUR APPROVAL</text>
+
+    <!-- what it learns feeds back into context -->
+    <path class="s s-dash" d="M430 413H150V249" marker-end="url(#dia-arrow)"/>
+
+    <path class="c" d="M670 463v44" marker-end="url(#dia-arrow)"/>
+    <text class="t-sm" x="686" y="490">THEN POSTS</text>
+
+    <!-- 5. general ledger -->
+    <rect class="s-box" x="1" y="507" width="898" height="190"/>
+    <path class="s" d="M1 544h898"/>
+    <text class="t-ink t-lg" x="20" y="533">GENERAL LEDGER</text>
+
+    <path class="s" d="M1 578h898M1 614h898M1 650h898M124 578v119M300 578v119M530 578v119"/>
+    <text class="t-th" x="20" y="568">DATE</text>
+    <text class="t-th" x="140" y="568">SOURCE DOC</text>
+    <text class="t-th" x="316" y="568">RULE APPLIED</text>
+    <text class="t-th" x="770" y="568" text-anchor="end">DR</text>
+    <text class="t-th" x="875" y="568" text-anchor="end">CR</text>
+
+    <text class="t-tb" x="20" y="605">04 JUL</text>
+    <text class="t-tb" x="140" y="605">GRN-4471</text>
+    <text class="t-tb" x="316" y="605">3-WAY MATCH</text>
+    <text class="t-tb" x="770" y="605" text-anchor="end">12,480.00</text>
+
+    <text class="t-tb" x="20" y="641">04 JUL</text>
+    <text class="t-tb" x="140" y="641">REM-0918</text>
+    <text class="t-tb" x="316" y="641">CASH APPLIED</text>
+    <text class="t-tb" x="770" y="641" text-anchor="end">86,310.00</text>
+
+    <text class="t-tb" x="20" y="677">05 JUL</text>
+    <text class="t-tb" x="140" y="677">INV-88213</text>
+    <text class="t-tb" x="316" y="677">SHORT-PAY</text>
+    <text class="t-tb" x="875" y="677" text-anchor="end">1,240.00</text>
+
+    <!-- the routes, with a pulse travelling each on a loop -->
+    <path class="c pulse pulse-c" d="M450 97v44M230 319v188"/>
+    <path class="f pulse pulse-f" d="M670 319v44M670 463v44"/>
+  </svg>
+</figure>
+    </div>
+  </section>
+
+<!-- ========== CSS (goes in assets/styles.css, replacing the
+     "---------- hero ----------" block) ========== -->
+
+<!--
+.hero{padding-top:clamp(44px,6vw,76px);padding-bottom:clamp(48px,6vw,84px)}
+.hero--split .hero__grid{
+  display:grid;
+  grid-template-columns:minmax(0,1fr) minmax(0,1.3fr);
+  gap:clamp(32px,5vw,64px);
+  align-items:center;
+}
+.hero--split h1{font-size:clamp(1.7rem,2.6vw,2.4rem);margin-bottom:1.2rem;max-width:19ch;font-family:'IBM Plex Sans','Helvetica Neue',Helvetica,Arial,sans-serif;font-weight:700;letter-spacing:-.01em}
+.hero--split .lead{margin-bottom:2rem;max-width:46ch}
+.hero-dia{width:100%;overflow-x:auto}
+.hero-dia > svg{min-width:640px}
+.hero-dia .pulse-c{stroke-dasharray:16 232;animation:heroFlowC 3.8s linear infinite}
+.hero-dia .pulse-f{stroke-dasharray:12 88;animation:heroFlowF 3.2s linear infinite}
+@keyframes heroFlowC{to{stroke-dashoffset:-248}}
+@keyframes heroFlowF{to{stroke-dashoffset:-100}}
+@media (max-width:900px){
+  .hero--split .hero__grid{grid-template-columns:1fr;gap:40px}
+  .hero--split h1{max-width:20ch}
+  .hero--split .lead{max-width:56ch}
+}
+-->
